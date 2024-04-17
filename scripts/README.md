@@ -45,5 +45,6 @@ special cases I encountered with RSA :
   3. **Multiple primes** > <a href="https://github.com/IC3lemon/cryptobible/blob/main/scripts/rsa-multiprimes.py">`the salvation`</a>
       > No specific concept, N is still the product of all the primes, phi is the product of all primes-1
 <br>
+
   4. **Only d and e available** > <a href="https://github.com/IC3lemon/cryptobible/blob/main/scripts/rsa-only-d-e-given.py">`the salvation`</a>
       > we use the formula `ed = 1 mod (p - 1)(q - 1)` basically. For further explaination, refer to the script
