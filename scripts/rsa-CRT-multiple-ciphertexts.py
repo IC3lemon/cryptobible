@@ -23,6 +23,6 @@ for n,c in zip(ns,cs):
     messages.append(m)
     modules.append(n)
 
-flag = crt(messages,modules)
+flag = crt(messages,modules)[0]
 
 THINE_MESSAGE = long_to_bytes(flag) # ----THINE MESSAGE HAST BEEN FOUND-----
