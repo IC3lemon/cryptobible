@@ -1,4 +1,4 @@
-import sympy as sp
+from sympy import *
 from Crypto.Util.number import *
 
 #  ----------rsa when p,q,c,e are available----------
