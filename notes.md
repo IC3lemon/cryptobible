@@ -1,6 +1,6 @@
-# `Mod math`
+## `Quadratic Residue`
 
-## Quadratic Residue 
+
 
 `a**2 % p = x` \
 here, `p` is some prime, \
@@ -33,7 +33,9 @@ Quadratic Residue * Quadratic Non-residue = Quadratic Non-residue
 Quadratic Non-residue * Quadratic Non-residue = Quadratic Residue
 ```
 
-## Legendre Symbol
+## `Legendre Symbol`
+
+
 
 Legendre's Symbol: `(a / p) ≡ a(p-1)/2 mod p` obeys:
 ```
@@ -72,8 +74,9 @@ def legendre_symbol(a,p):
         return False
 ```
 
+## `Euler's Criterion` 
 
-## Euler's Criterion 
+
 
 if `a` is a quadratic residue \
 `a**((p-1)//2)) ≡ 1 mod p` 
