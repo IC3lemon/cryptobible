@@ -23,7 +23,7 @@ for a in range(1,p):
     print(f"square root : {a}")
     yes = 1
     break
-if yes = 0:
+if yes == 0:
   print("not a quad residue.")
 ```
 
@@ -39,7 +39,7 @@ Quadratic Non-residue * Quadratic Non-residue = Quadratic Residue
 
 Legendre's Symbol: `(a / p) ≡ a(p-1)/2 mod p` obeys:
 ```
-(a / p) = 1 if a is a quadratic residue and a ≢ 0 mod p
+(a / p) = 1 if a is a quadratic residue and a ≢0 mod p
 (a / p) = -1 if a is a quadratic non-residue mod p
 (a / p) = 0 if a ≡ 0 mod p
 ```
@@ -84,7 +84,7 @@ if `a` is a quadratic residue \
 so say u wanna find sqrt `x` for a quadratic residue `a`. \
 `x**2 ≡ a mod p` \
 so multiply a on both sides on Euler's criterion, u get : \
-`a**((p+1)//2) ≡ a mod p` \
+`a**((p+1)//2) *a ≡ 1 *a  mod p` \
 => `[a**((p+1)//4)] **2 ≡ a mod p` \
 now this looking like `x**2 ≡ a mod p`
 
@@ -92,7 +92,7 @@ so therfore u can calculate yo roots with \
 **` x = a**((p+1)//4) `**
 
 but for this to work, `(p+1)/4` has to be not decimal. \
-Thus it works only in the case of `p+1 ≡ 0 mod 4` || `p ≡ -1 mod 4` || `p ≡ 3 mod 4`
+**Thus it works only in the case of `p+1 ≡ 0 mod 4` || `p ≡ -1 mod 4` || `p ≡ 3 mod 4`**
 
 ```python
 from sympy import legendre_symbol
@@ -106,3 +106,99 @@ exp = (p+1)//4
 sqt = pow(x,exp,p)
 print(f"{sqt} is the square root")
 ```
+All primes that aren't 2 are of the form 
+```
+p ≡ 1 mod4 or 
+p ≡ 3 mod4
+```
+
+for `p ≡ 3 mod4` u can use eulers criterion [ OR tonelli-shanks ]\
+for `p ≡ 1 mod4` u gotta use tonelli-shanks 
+
+
+## `Tonelli-Shanks`
+
+
+![image](https://github.com/user-attachments/assets/a9a3387d-c0e0-4cbf-be0f-dbce63ec9d65) \
+![image](https://github.com/user-attachments/assets/6bf32abc-67d8-421c-ae0d-6ec6e39d3b51)
+
+
+steps to find modular square root of A using shank Tonelli’s algorithm :
+
+1. Check if `A` is quadratic residue
+2. write `p-1` in terms of `s * (2**e)`
+3. find smallest `q` such that `q **((p – 1) / 2)  % p = p-1 `
+4. set `x = A**((s+1)/2) % p` \
+   set `b = A**s % p` \
+   set `g = q**s % p` \
+   set `r = e`
+5. Now loop till `m=0` or `b=1` for below process
+```
+Find least integer m such that b^(2^m) = 1(mod p)  and  0 <= m <= r – 1 
+   If m = 0, then we found correct answer and return x as result
+   Else update x, b, g, r as below
+       x = x * g ^ (2 ^ (r – m - 1))
+       b = b * g ^(2 ^ (r - m))
+       g = g ^ (2 ^ (r - m))
+       r = m
+```
+ if m becomes 0 or b becomes 1, we terminate and print the result.  \
+ This loop guarantees to terminate because value of m is decreased each time after updation.
+
+Implementation : 
+```python
+
+a = BIG_NUM
+p = BIG_NUM
+
+# x**2 % p = a % p | need to find x
+
+# reference : https://www.geeksforgeeks.org/find-square-root-modulo-p-set-2-shanks-tonelli-algorithm/
+
+from sympy import legendre_symbol
+
+def tonelli(a : int,p : int) -> int: 
+
+    if legendre_symbol(a,p) == 1:       # check if a IS a quadratic residue
+        s = p - 1
+        e = 0
+        while s % 2 == 0:
+            s = s // 2
+            e += 1                      # compute s,e such that  p-1 = s * (2**e)
+        
+        q=2
+        while True:                     # find smallest q such that q **((p – 1) / 2)  % p = p-1 
+            if pow(q, (p-1)//2, p) == p-1:
+                break
+            else:
+                q += 1
+
+        x = pow(a,(s+1)//2,p)
+        b = pow(a,s,p)
+        g = pow(q,s,p)
+        r = e
+
+        while True:  
+            m = 0                       # find least integer m such that b^(2^m) = 1(mod p)  and  0 <= m <= r – 1 
+            while m < r:                        
+                if pow(b,pow(2,m),p) == 1:  
+                    break
+                else:
+                    m += 1
+            
+            if m == 0:
+                return x                # got it
+            else:
+                x = (x * pow(g ,pow(2,r-m-1), p))  % p
+                b = b * pow(g,pow(2,r-m), p)
+                g = pow(g,pow(2,r-m), p)
+                r = m
+            
+            if b == 1:
+                return x
+
+print(tonelli(a,p))
+```
+
+# `Chinese Remainder Theorem`
+
