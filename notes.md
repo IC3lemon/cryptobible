@@ -8,7 +8,7 @@ here, `p` is some prime, \
 `a` is `sqrt of x` \
 **[ not the normal sqrt, weird mod math sqrt ]**
 
-basic cringe script to check if a number is a quad residue :
+basic cringe bruteforce script to check if a number is a quad residue :
 (would work only for small p)
 ```python
 from Crypto.Util.number import *
@@ -17,8 +17,8 @@ p = 29
 num = 6
 yes = 0
 for a in range(1,p):
-  if pow(a,2,p) == int:
-    residue = int
+  if pow(a,2,p) == num:
+    residue = num
     print(f"{num} is a quadratic residue.")
     print(f"square root : {a}")
     yes = 1
