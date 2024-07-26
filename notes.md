@@ -1,4 +1,4 @@
-## `Quadratic Residue`
+# `Quadratic Residue`
 
 
 
@@ -33,7 +33,7 @@ Quadratic Residue * Quadratic Non-residue = Quadratic Non-residue
 Quadratic Non-residue * Quadratic Non-residue = Quadratic Residue
 ```
 
-## `Legendre Symbol`
+# `Legendre Symbol`
 
 
 
@@ -74,7 +74,7 @@ def legendre_symbol(a,p):
         return False
 ```
 
-## `Euler's Criterion` 
+# `Euler's Criterion` 
 
 
 
@@ -116,7 +116,7 @@ for `p ≡ 3 mod4` u can use eulers criterion [ OR tonelli-shanks ]\
 for `p ≡ 1 mod4` u gotta use tonelli-shanks 
 
 
-## `Tonelli-Shanks`
+# `Tonelli-Shanks`
 
 
 ![image](https://github.com/user-attachments/assets/a9a3387d-c0e0-4cbf-be0f-dbce63ec9d65) \
@@ -202,3 +202,11 @@ print(tonelli(a,p))
 
 # `Chinese Remainder Theorem`
 
+if u have a bunch of congruences such that : 
+```
+x ≡ a1 mod n1
+x ≡ a2 mod n2
+x ≡ a3 mod n3
+```
+there exists `a` such that : ` x ≡ a mod N ` \
+where `N = n1 * n2 * n3`
