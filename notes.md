@@ -1,3 +1,16 @@
+# `Fermat's Little Theorem`
+
+<p><b>Fermat's little theorem</b> states that if <span class="texhtml mvar" style="font-style:italic;">p</span> is a prime number</a>, then for any integer</a> <span class="texhtml mvar" style="font-style:italic;">a</span>, the number <b><span class="texhtml"><i>a</i><sup><i>p</i></sup> − <i>a</i></span></b> is an integer multiple of <span class="texhtml mvar" style="font-style:italic;"><b>p</span>. 
+</p>
+
+anything of the form \
+`(a**p) - a` is divisible by `p` \
+> given that : \
+> `a is an integer` \
+> `p is prime`
+
+
+
 # `Quadratic Residue`
 
 
