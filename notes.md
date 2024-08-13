@@ -1,6 +1,6 @@
 # `Fermat's Little Theorem`
 
-<p><b>Fermat's little theorem</b> states that if <span class="texhtml mvar" style="font-style:italic;">p</span> is a prime number</a>, then for any integer</a> <span class="texhtml mvar" style="font-style:italic;">a</span>, the number <b><span class="texhtml"><i>a</i><sup><i>p</i></sup> − <i>a</i></span></b> is an integer multiple of <span class="texhtml mvar" style="font-style:italic;"><b>p</span>. 
+<p><b>Fermat's little theorem</b> states that if <span class="texhtml mvar" style="font-style:italic;">p</span> is a prime number</a>, then for any integer</a> <span class="texhtml mvar" style="font-style:italic;">a</span>, the number <b><span class="texhtml"><i>a</i><sup><i>p</i></sup> − <i>a</i></span></b> is an integer multiple of <span class="texhtml mvar" style="font-style:italic;"></b>p</span>. 
 </p>
 
 anything of the form \
@@ -233,3 +233,27 @@ Ns = [n1, n2, n3]
 As = [a1, a2, a3]
 a = crt(N, c)[0]
 ```
+
+# `Euler's phi function`
+
+the Euler phi function, written `ϕ(n)`, for positive integers `n`. \
+`ϕ(n)` is the number of non-negative integers less than `n` that are relatively prime to `n`.
+
+***
+
+**some basic properties of phi :**
+
+## `phi(1) = 1` 
+
+## if `p` is a prime,
+![image](https://github.com/user-attachments/assets/b4d18546-fdb0-4dbd-afa6-5615916d845b) \
+because 1, 2 ... p-1 are relatively prime to p
+
+## if `p` is a prime and `a` is a positive integer 
+![image](https://github.com/user-attachments/assets/448d22f5-bded-48c2-b9aa-53f50c7f3963)
+
+## if `a` and `b` are relatively prime then
+![image](https://github.com/user-attachments/assets/bcc5f54f-7b21-4609-bdfa-6f3943daf257)
+
+## if `n` is an integer with prime factors, `p1`, `p2`, ... `pn`
+![image](https://github.com/user-attachments/assets/45d46aa4-0a90-43b5-ac8e-aaf412e568c3)
