@@ -223,3 +223,13 @@ x ≡ a3 mod n3
 ```
 there exists `a` such that : ` x ≡ a mod N ` \
 where `N = n1 * n2 * n3`
+
+implementation : 
+```python
+from sympy.ntheory.modular import crt
+import gmpy2
+
+Ns = [n1, n2, n3]
+As = [a1, a2, a3]
+a = crt(N, c)[0]
+```
