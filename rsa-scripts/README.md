@@ -2,7 +2,7 @@
 ***
 <br>
 
-Thine must have `pycryptodome` and `sympy` `gympy` modules installed for above scripts to work.
+Thine must have `pycryptodome` and `sympy` `gympy` modules installed for above scripts to work. \
 Below described are the methods and knowledge of how above scriptures came into being.
    
 <br>
