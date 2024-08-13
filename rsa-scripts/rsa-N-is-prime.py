@@ -26,3 +26,10 @@ for root in roots:
     flag = long_to_bytes((root*a) % N)
     if b'flagformat' in flag:
         print(flag)             # THINE FLAG
+
+
+# alternatively 
+
+phi = p-1        # N = p ==>  N = p * 1  ==> for primes p, φ(p)=p-1
+d = inverse(e,phi)
+print(pow(ct,d,N))    # flag
