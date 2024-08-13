@@ -21,3 +21,6 @@ _May thee findeth code f'r the encoded  "_
 <br>
 
 ***
+
+- refer to <a href="https://github.com/IC3lemon/cryptobible/blob/main/bread-and-butter.md">`bread-and-butter.md`</a> for absolute basic stuff
+- refer to <a href="https://github.com/IC3lemon/cryptobible/blob/main/notes.md">`notes.md`</a> for modular arithematic theorems and other core math stuff
