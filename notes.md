@@ -4,7 +4,7 @@
 </p>
 
 anything of the form \
-`(a**p) - a` is divisible by `p` \
+`(a**p) - a` is divisible by `p` 
 > given that : \
 > `a is an integer` \
 > `p is prime`
