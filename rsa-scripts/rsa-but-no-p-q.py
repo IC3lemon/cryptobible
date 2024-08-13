@@ -19,3 +19,18 @@ d = inverse(e,phi)
 m = pow(c,d,N)
 
 THINE_MESSAGE = long_to_bytes(m) # ----THINE MESSAGE HAST BEEN FOUND-----
+
+
+# alternatively 
+
+from factordb.factordb import FactorDB
+
+f = FactorDB(n)
+primes = f.get_factor_list()
+p, q = primes[0], primes[1]
+
+phi = (p-1)*(q-1)
+d = inverse(e,phi)
+m = pow(c,d,N)
+
+THINE_MESSAGE = long_to_bytes(m) # ----THINE MESSAGE HAST BEEN FOUND-----
