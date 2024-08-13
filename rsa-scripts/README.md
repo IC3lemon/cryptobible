@@ -32,19 +32,3 @@ in a nutshell :
 The basic RSA script I cooked when I was but a young crypto hatchling > <a href="https://github.com/IC3lemon/cryptobible/blob/main/scripts/rsa-basic.py">`the salvation`</a>
 
 <br>
-
-special cases I encountered with RSA : 
-  1. **N is a prime number** > <a href="https://github.com/IC3lemon/cryptobible/blob/main/scripts/rsa-N-is-prime.py">`the salvation`</a>
-      > A concept called the roots of unity was applied to solve this case
-<br>
-
-  2. **Multiple ciphertexts** > <a href="https://github.com/IC3lemon/cryptobible/blob/main/scripts/rsa-CRT-multiple-ciphertexts.py">`the salvation`</a>
-      > A concept called CRT i.e. Chinese Remainder Theorem applied
-<br>
-
-  3. **Multiple primes** > <a href="https://github.com/IC3lemon/cryptobible/blob/main/scripts/rsa-multiprimes.py">`the salvation`</a>
-      > No specific concept, N is still the product of all the primes, phi is the product of all primes-1
-<br>
-
-  4. **Only d and e available** > <a href="https://github.com/IC3lemon/cryptobible/blob/main/scripts/rsa-only-d-e-given.py">`the salvation`</a>
-      > we use the formula `ed = 1 mod (p - 1)(q - 1)` basically. For further explaination, refer to the script
