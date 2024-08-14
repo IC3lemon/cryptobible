@@ -45,7 +45,7 @@ primes = f.get_factor_list()
 
 > ### sympy
 
-less goated. Use for smaller numbers ig. \
+less goated. Use for smaller numbers ig. 
 ```python
 from sympy import *
 
@@ -55,7 +55,7 @@ factors = factorint(N).keys()
 
 ***
 
-other algorithms for factoring may include : \
+other algorithms for factoring may include : 
 - `lenstras ecm`
 - `pollard's p-1`
 - `Quadratic Sieve`
