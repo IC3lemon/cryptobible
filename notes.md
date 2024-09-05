@@ -227,11 +227,10 @@ where `N = n1 * n2 * n3`
 implementation : 
 ```python
 from sympy.ntheory.modular import crt
-import gmpy2
 
-Ns = [n1, n2, n3]
-As = [a1, a2, a3]
-a = crt(N, c)[0]
+moduli = [n1, n2, n3]
+residues = [a1, a2, a3]
+x = crt(moduli, residues)[0]
 ```
 
 # `Euler's phi function`
