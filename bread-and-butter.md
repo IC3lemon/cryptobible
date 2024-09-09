@@ -59,6 +59,40 @@ other algorithms for factoring may include :
 - `lenstras ecm`
 - `pollard's p-1`
 - `Quadratic Sieve`
+  
+# `solving a set of equations`
+
+> ### sympy
+```python
+from sympy import *  # pip install sympy
+
+x,y,z = symbols('x y z')
+eq1 = Eq( # LHS, # RHS )
+eq2 = Eq( # LHS, # RHS )
+eq3 = Eq( # LHS, # RHS )
+
+# for n unknowns, n equations only.
+```
+
+> ### z3
+```python
+from z3 import *   # pip install z3-solver
+
+solver = Solver()
+x = Int('x')
+y = Int('y')
+z = Int('z')
+
+solver.add( # first equation in the form : LHS == RHS )
+solver.add( # second equation in the form : LHS == RHS )
+solver.add( # third equation in the form : LHS == RHS )
+
+# can also add conditions in z3 such that :
+solver.add( x > y )
+solver.add( y > z )
+```
+learn z3 -> https://github.com/ViRb3/z3-python-ctf
+
 
 # `cheating basically`
 
