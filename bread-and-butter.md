@@ -129,6 +129,11 @@ for a vector basis `V = {v1, v2 ... vn}` \
 if a basis is orthogonal AND for every `vi` in `V` \
 `|vi| = 1`
 
+# `lattice`
+literally just watch this -> <a href="https://www.youtube.com/watch?v=FcgN_ijcU6g">`https://www.youtube.com/watch?v=FcgN_ijcU6g`</a> \
+the normal coordinate system as a lattice -> basis of `[[1,0,0],[0,1,0],[0,0,1]]`
+
+
 # `cheating basically`
 
 `cyber chef` -  https://gchq.github.io/CyberChef/ \
