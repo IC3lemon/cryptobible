@@ -130,7 +130,9 @@ if a basis is orthogonal AND for every `vi` in `V` \
 `|vi| = 1`
 
 # `lattice`
-literally just watch this -> <a href="https://www.youtube.com/watch?v=FcgN_ijcU6g">`https://www.youtube.com/watch?v=FcgN_ijcU6g`</a> \
+literally just watch this -> <a href="https://www.youtube.com/watch?v=FcgN_ijcU6g">`What are lattices and basis`</a> \
+literally just watch this -> <a href="https://youtu.be/QDdOoYdb748?si=-s5zefPQZJ9sI6cZ">`Upper video but better`</a> \
+
 the normal coordinate system as a lattice -> basis of `[[1,0,0],[0,1,0],[0,0,1]]`
 
 
