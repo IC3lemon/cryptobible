@@ -256,3 +256,52 @@ because 1, 2 ... p-1 are relatively prime to p
 
 ## if `n` is an integer with prime factors, `p1`, `p2`, ... `pn`
 ![image](https://github.com/user-attachments/assets/45d46aa4-0a90-43b5-ac8e-aaf412e568c3)
+
+# `Gram Schmidt`
+
+Given a basis for a vector space, `V = {v1, v2, v3, v4 ... vn}` \
+You can compute an orthogonal basis `u1, u2, u3, ... un ∈ V` \
+![image](https://github.com/user-attachments/assets/7edbfdaf-0cda-40d4-9bc5-e7cf75040cf3)
+
+```python
+
+def dot(a: list, b: list) -> float:
+    # Ensure both lists have the same length by padding with zeros
+    if len(a) < len(b):
+        a += [0] * (len(b) - len(a))
+    elif len(b) < len(a):
+        b += [0] * (len(a) - len(b))
+    
+    dot_product = sum(x * y for x, y in zip(a, b))
+    return dot_product
+
+def scalar(a: float, b: list) -> list:
+    return [a * i for i in b]
+
+def sub(a: list, b: list) -> list:
+    if len(a) < len(b):
+        a += [0] * (len(b) - len(a))
+    elif len(b) < len(a):
+        b += [0] * (len(a) - len(b))
+    return [A - B for A, B in zip(a, b)]
+
+def gram_schmidt(V: list) -> list:
+    # Initialize orthogonal basis U
+    U = [None] * len(V)
+    U[0] = V[0]  # First vector remains the same
+    
+    for i in range(1, len(V)):
+        # Start with the current vector
+        U[i] = V[i]
+        for j in range(i):
+            # Project V[i] onto U[j] and subtract the projection from U[i]
+            u_ij = dot(V[i], U[j]) / dot(U[j], U[j])
+            U[i] = sub(U[i], scalar(u_ij, U[j]))
+    
+    return U
+
+V = [(4, 1, 3, -1), (2, 1, -3, 4), (1, 0, -2, 7), (6, 2, 9, -5)] # whatever ur vector basis is
+U = gram_schmidt(V)
+
+print("Orthogonal basis:", U)
+```
