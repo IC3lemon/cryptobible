@@ -305,3 +305,43 @@ U = gram_schmidt(V)
 
 print("Orthogonal basis:", U)
 ```
+# `Gaussian Lattice Reduction`
+
+reduces 2d lattices, given a bad basis
+```python
+def mag(vector):
+    return vector[0]**2 + vector[1]**2
+
+def dot(a, b):
+    # Ensure both lists have the same length by padding with zeros
+    if len(a) < len(b):
+        a += [0] * (len(b) - len(a))
+    elif len(b) < len(a):
+        b += [0] * (len(a) - len(b))
+    
+    dot_product = sum(x * y for x, y in zip(a, b))
+    return dot_product
+
+def scalar(a: float, b: list) -> list:
+    return [a * i for i in b]
+
+def sub(a: list, b: list) -> list:
+    if len(a) < len(b):
+        a += [0] * (len(b) - len(a))
+    elif len(b) < len(a):
+        b += [0] * (len(a) - len(b))
+    return [A - B for A, B in zip(a, b)]
+
+def Gaussian_Lattice_Reduction(basis):
+    v1 = basis[0]
+    v2 = basis[1]
+    while True:
+        if mag(v1) > mag(v2):
+            v1, v2 = v2, v1
+        m = int(dot(v1,v2) / dot(v1, v1))
+        if m == 0:
+            return [v1, v2]
+        v2 = sub(v2 ,scalar(m,v1))
+
+good_basis = Gaussian_Lattice_Reduction(bad_basis)
+```
