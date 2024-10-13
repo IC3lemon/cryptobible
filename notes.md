@@ -345,8 +345,8 @@ def Gaussian_Lattice_Reduction(basis):
 
 good_basis = Gaussian_Lattice_Reduction(bad_basis)
 ```
-better sagemath implementation :
-```
+sagemath implementation :
+```sage
 def Gaussian_Lattice_Reduction(basis):
     v1 = basis[0]
     v2 = basis[1]
