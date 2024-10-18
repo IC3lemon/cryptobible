@@ -31,3 +31,16 @@ in a nutshell :
 The basic RSA script I cooked when I was but a young crypto hatchling > <a href="https://github.com/IC3lemon/cryptobible/blob/main/scripts/rsa-basic.py">`the salvation`</a>
 
 <br>
+
+<br>
+extracting info from RSA keys : 
+```py
+from Crypto.PublicKey import RSA
+
+f = open('key.pem','r')
+key = RSA.importKey(f.read())
+
+print(key.n)
+print(key.e)
+print(key.d)
+```
