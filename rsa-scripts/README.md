@@ -1,48 +1,97 @@
+# `RSA`
+
+The undoubted unquestioned goat. \
+https://en.wikipedia.org/wiki/RSA_(cryptosystem)
+
+## Attacks logged here 
+- [`common modulus attack`](https://github.com/IC3lemon/cryptobible/blob/main/rsa-scripts/rsa-common-modulus-attack.py)
+- [`hastad's broadcast attack`](https://github.com/IC3lemon/cryptobible/blob/main/rsa-scripts/rsa-hastads-broadcast-attack.py)
+- [`wiener's attack`](https://github.com/IC3lemon/cryptobible/blob/main/rsa-scripts/rsa-weiners-attack.py)
+- [`attacks on phi`](https://github.com/IC3lemon/cryptobible/blob/main/rsa-scripts/rsa-attacks-on-phi.py)
 
 ***
-<br>
+# common-modulus-attack
 
-Thine must have `pycryptodome` and `sympy` `gympy` modules installed for above scripts to work. \
-Below described are the methods and knowledge of how above scriptures came into being.
-   
-<br>
+### `SITUATION :`
+when same message `m` has been encrypted twice. \
+using the same `n`, but different `e` such that : 
+```
+c1 = m ** e1   % n
+c2 = m ** e2   % n
+```
+m can be extracted
+
+> [!NOTE]
+> `e1` `e2` must be coprime for this attack to work.
+
+### `how it works :`
+
+since `e1`, `e2` are coprime
+```
+gcd(e1, e2) = 1
+```
+
+now we know that according to `extended euclidean algorithm` \
+for the gcd of any two numbers `x` and `y`, \
+there exists `a`, `b` such that
+```
+ax + by = gcd(x, y)
+```
+this a, b can be calculated using `egcd`
+
+similarly for e1, e2
+```
+a*e1 + b*e2 = 1      ----- 1
+```
+
+now our message m 
+```
+m = m**1 % n
+```
+replacing 1 with eqn 1
+```
+m = m**(ae1 + be2)  % n
+m = ( m**ae1 ) * ( m**be2 ) % n
+m = ( c1**a  ) * ( c2**b )  % n 
+```
+we can find a, b thus decrypted.
 
 ***
+# hastad-broadcast-attack
 
-# RSA
+### `SITUATION :`
+when the same message `m` \
+has been encrypted `e` times \
+with a corresponding `N` `C` for each encrypted broadcast. 
 
+m can be extracted in this case.
+
+> [!NOTE]
+> All the `N`'s need to be coprime, none can share factors, otherwise this attack fails
+
+### `how it works :`
+
+you essentially have
 ```
-the bread and butter. The unquestioned, undoubted goat.
-You have ciphertexts which are encrypted via a public key (N,e),
-and decrypted via a private key (d,e) which is kept secret.
-
-The relations between them...
-N = p * q     Where p and q are certain secret prime numbers
-e = an exponent (usually 65537)
-d = mod_inv(e, (p-1)*(q-1))
-
-the ciphertext is constructed via : c = (m**e) % N
+c1 = m ** e % n1
+c2 = m ** e % n2
+.
+.
+.
+ck = m ** e % nk
 ```
-in a nutshell : 
-![image](https://github.com/IC3lemon/cryptobible/assets/150153966/bc39b6b0-a9a4-405c-9f16-ad65a82a84e9)
-
-<br>
-
-The basic RSA script I cooked when I was but a young crypto hatchling > <a href="https://github.com/IC3lemon/cryptobible/blob/main/scripts/rsa-basic.py">`the salvation`</a>
-
-<br>
-
-<br>
-
-extracting info from RSA keys : 
-
-```py
-from Crypto.PublicKey import RSA
-
-f = open('key.pem','r')
-key = RSA.importKey(f.read())
-
-print(key.n)
-print(key.e)
-print(key.d)
+we can rearrange this to form the congruences 
 ```
+m**e = c1 % n1
+m**e = c2 % n2
+m**e = c3 % n3
+.
+.
+.
+m**e = ck % nk
+```
+
+crt can solve this system of congruences to give us the original value for `m**e` \
+then just simply find the `e th` root of that value to get `m`
+***
+
