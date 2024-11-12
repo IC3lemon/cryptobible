@@ -7,18 +7,30 @@ def chinese_remainder_theorem(items):
     result = sum((N // item[1]) * gmpy2.invert(N // item[1], item[1]) * item[0] for item in items) % N
     return result
 
-def hastads_broadcast_attack(ciphertexts, moduli, e):
-    assert len(ciphertexts) == len(moduli), "The number of ciphertexts and moduli must be equal."
-    assert len(ciphertexts) >= e, "The number of ciphertexts must be at least as large as the exponent."
+def hastad_broadcast_attack(ciphertexts : list, moduli : list, e : int) -> int:
+    """
+    Attack to be used when SAME MESSAGE is encrypted E times, and we have been provided corresponding moduli and ciphertexts
+    no moduli should share factors, otherwise this attack fails due to crt not working in that case
+    
+    Args:
+        ciphertexts : list of ciphertext integers
+        moduli      : list of integer moduli corresponding to the ciphertext in that index
+        e           : public exponent
+    """
+    assert e == len(moduli) == len(ciphertexts), "The amount of ciphertexts should be equal to e."
+    for i in range(len(moduli)):
+        for j in range(len(ciphertexts)):
+            if i != j and gcd(moduli[i], moduli[j]) != 1:
+                raise ValueError(f"Modulus {i} and {j} share factors, Hastad's attack is impossible.")
+            
     crt_result = chinese_remainder_theorem(list(zip(ciphertexts, moduli)))
-    plaintext = gmpy2.iroot(crt_result, e)[0]
-    return int(plaintext)
+    plaintext = int(gmpy2.iroot(crt_result, e)[0])
 
+    return plaintext
 
-Ns = [N1, N2 ...] # thine Ns
-Cs = [C1, C2 ...] # thins Cs
-
-e = 696969 # thine e
-
-flag = long_to_bytes(hastads_broadcast_attack(Ns, Cs, e))
-print(flag.decode()) # flag
+if __name__ == "__main__":
+    Ns = [N1, N2 ...] # moduli
+    Cs = [c1, c2, ...] # respective cipertexts
+    
+    flag = long_to_bytes(hastads_broadcast_attack(Cs, Ns, e))
+    print(f"flag : {flag}") 
