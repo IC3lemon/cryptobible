@@ -1,17 +1,13 @@
 from Crypto.Cipher import AES
 
-#  ----------AES ECB MODE----------
-
-#  Thine must have pycryptodome module installed for this to worketh.
-
-ciphertext = "THINE_CIPHERTEXT_IN_HEX"
-key = "THINE_KEY_IN_HEX"
+ciphertext = "ciphertext in hex"
+key = "key in hex"
 
 def decrypt(ciphertext, key):
     ciphertext = bytes.fromhex(ciphertext)
     key = bytes.fromhex(key)
 
-    cipher = AES.new(key, AES.MODE_ECB)
+    cipher = AES.new(key, AES.MODE_ECB) # change param2 for mode changing. 3rd param for iv/nonce
     try:
         decrypted = cipher.decrypt(ciphertext)
     except ValueError as e:
@@ -19,4 +15,4 @@ def decrypt(ciphertext, key):
 
     return decrypted
 
-flag = decrypt(ciphertext, key)     # THINE FLAG
+flag = decrypt(ciphertext, key)
