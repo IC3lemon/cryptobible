@@ -1,3 +1,10 @@
+
+- [`conversions`](https://github.com/IC3lemon/cryptobible/tree/main/bread-and-butter.md#basic-conversions)
+- [`factoring`](https://github.com/IC3lemon/cryptobible/tree/main/bread-and-butter.md#basic-factoring)
+- [`solving equations`](https://github.com/IC3lemon/cryptobible/tree/main/bread-and-butter.md#solving-a-set-of-equations)
+- [`cheating`](https://github.com/IC3lemon/cryptobible/tree/main/bread-and-butter.md#cheating-basically)
+  
+***
 # `Basic conversions`
 
 ```python
@@ -92,49 +99,6 @@ solver.add( x > y )
 solver.add( y > z )
 ```
 learn z3 -> https://github.com/ViRb3/z3-python-ctf
-
-# `vector basics`
-
-## linearly independent vectors 
-consider a set of vectors
-```
-V = {v1, v2, v3 ... vn}
-```
-if these vectors are `linearly independent` then
-```
-v1a1 + v2a2 + ... + vnan = 0
-
-only if
-a1=a2=...=an=0
-```
-![image](https://github.com/user-attachments/assets/938bb401-adb8-4229-9e42-6a61e29ea99a)
-
-## BASIS
-A set of linearly independent vectors `V = {v1, v2 ... vn}` \
-can be called a basis if you can define a vector `w = v1a1 + v2a2 + ... + vnan` and `w ∈ V` \
-
-![image](https://github.com/user-attachments/assets/a2510d29-e66f-4181-96d7-e3d30017b435)
-
-- `The number of elements in the basis = the dimension of the vector space.`
-## `size of a vector  ∣∣v∣∣`
-`literally magnitude of a vector`
-
-## `orthogonal basis`
-for a vector basis `V = {v1, v2 ... vn}` \
-if the dot product between any two vectors is `0` the basis is orthogonal \
-![image](https://github.com/user-attachments/assets/6379c0a2-7565-46b4-bf42-bbce47f1f707)
-
-## `orthonormal basis`
-for a vector basis `V = {v1, v2 ... vn}` \
-if a basis is orthogonal AND for every `vi` in `V` \
-`|vi| = 1`
-
-# `lattice`
-literally just watch this -> <a href="https://www.youtube.com/watch?v=FcgN_ijcU6g">`What are lattices and basis`</a> \
-literally just watch this -> <a href="https://youtu.be/QDdOoYdb748?si=-s5zefPQZJ9sI6cZ">`Upper video but better`</a> \
-
-the normal coordinate system as a lattice -> basis of `[[1,0,0],[0,1,0],[0,0,1]]`
-
 
 # `cheating basically`
 
