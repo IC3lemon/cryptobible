@@ -7,33 +7,36 @@
 ***
 # `Basic conversions`
 
-```python
+> ## int to bytes, byte to int
+```py
 from Crypto.Util.number import *
 
-# int to bytes, byte to int
 a = b"blahblah"
 b = bytes_to_long(a)
 c = long_to_bytes(b)
+```
+> ## bytes to hex, hex to bytes
+```py
+from Crypto.Util.number import *
 
-# bytes to hex, hex to bytes
 a = "deadbeef"
 b = bytes.fromhex(a)
 c = hex(bytes_to_long(b))
-
-# base64, 58 whatever
+```
+> ## base64, 58 whatever
+```py
 import base64
-...
-...
-import base58
 
 a = "d293IHUgZGVjb2RlZCB0aGlzLiBjcmF6eS4gdXIgc28gdGFsZW50ZWQuIHNvIHNtYXJ0IA=="
 b = base64.b64decode(a).decode()
-c = base64.b64encode(a.encode())
-
-# individual byte list to bytestring ?
+c = base64.b58decode(a).decode()
+```
+> ## individual byte list to bytestring ?
+```py
 a = [101, 234, 255, 10, 11, 12]
 b = bytearray(a)
 ```
+
 # `Basic factoring`
 
 > ### factordb
@@ -59,14 +62,15 @@ from sympy import *
 N = # number to be factored
 factors = factorint(N).keys()
 ```
-
+> ### [ALPERTRON](https://www.alpertron.com.ar/ECM.HTM)
 ***
 
 other algorithms for factoring may include : 
 - `lenstras ecm`
 - `pollard's p-1`
 - `Quadratic Sieve`
-  
+ \
+ // to be implemented and logged
 # `solving a set of equations`
 
 > ### sympy
