@@ -31,3 +31,10 @@
 - [x] [hastad broadcast attack](https://github.com/IC3lemon/cryptobible/blob/main/rsa-scripts/rsa-hastads-broadcast-attack.py)
 - [x] [weiners attack]()
 - [x] [attacks on phi]()
+
+## RNG
+- ### [Merseinne Twister]
+    - [ ] [predicting outputs with full state](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+    - [ ] [predicting outputs with partial state](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+    - [ ] [full state to seed](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+    - [ ] [partial state to seed](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
