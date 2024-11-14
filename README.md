@@ -33,7 +33,7 @@
 - [x] [attacks on phi]()
 
 ## RNG
-- ### [Merseinne Twister]
+- ### Merseinne Twister
     - [ ] [predicting outputs with full state](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
     - [ ] [predicting outputs with partial state](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
     - [ ] [full state to seed](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
