@@ -17,7 +17,7 @@
 
 ***
 
-# Attacks implemented
+# Attacks Implemented
 
 ## CBC
 - [x] [Padding Oracle attack](https://github.com/IC3lemon/cryptobible/blob/main/aes-scripts/aes-cbc-paddingoracle.py)
