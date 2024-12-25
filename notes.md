@@ -1,3 +1,32 @@
+# `Euler's theorem + why RSA works`
+
+This also covers why `ed = 1 (mod phi(n))` works in RSA \
+In RSA encryption / decryption : 
+```
+c = m**e (mod n)
+m = c**d (mod n)
+
+i.e.
+
+m = (m**e)**d (mod n)
+m = m**(ed)   (mod n)
+m**(ed) = m   (mod n)
+```
+now Euler's theorem states \
+for any `m` coprime to `n` 
+```py
+m**(phi(n)) = 1 (mod n)
+```
+thus, if `ed = 1 (mod phi)` \
+```
+   m**(ed)                 (mod n)
+=> m**(1 + k*phi)          (mod n)
+=> m * (m**(k*phi))        (mod n)
+=> m * 1                   (mod n)
+=> m                       (mod n)
+```
+ensures a private key that 100% works.
+
 # `Fermat's Little Theorem`
 
 <p><b>Fermat's little theorem</b> states that if <span class="texhtml mvar" style="font-style:italic;">p</span> is a prime number</a>, then for any integer</a> <span class="texhtml mvar" style="font-style:italic;">a</span>, the number <b><span class="texhtml"><i>a</i><sup><i>p</i></sup> − <i>a</i></span></b> is an integer multiple of <span class="texhtml mvar" style="font-style:italic;"></b>p</span>. 
