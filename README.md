@@ -31,6 +31,7 @@
 - [x] [hastad broadcast attack](https://github.com/IC3lemon/cryptobible/blob/main/rsa-scripts/rsa-hastads-broadcast-attack.py)
 - [x] [weiners attack]()
 - [x] [attacks on phi]()
+- [x] [coppersmith's attack for short exponent](https://github.com/IC3lemon/cryptobible/blob/main/rsa/rsa-coppersmiths-attack.py)
 
 ## RNG
 - ### Merseinne Twister
