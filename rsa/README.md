@@ -8,6 +8,7 @@ https://en.wikipedia.org/wiki/RSA_(cryptosystem)
 - [`hastad's broadcast attack`](https://github.com/IC3lemon/cryptobible/blob/main/rsa-scripts/rsa-hastads-broadcast-attack.py)
 - [`wiener's attack`](https://github.com/IC3lemon/cryptobible/blob/main/rsa-scripts/rsa-weiners-attack.py)
 - [`attacks on phi`](https://github.com/IC3lemon/cryptobible/blob/main/rsa-scripts/rsa-attacks-on-phi.py)
+- [`coppersmith's attack for random pads`]
 
 ***
 # common-modulus-attack
