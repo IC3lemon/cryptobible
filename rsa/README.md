@@ -121,3 +121,6 @@ f(m) = (m + a)**3 - c (mod n)
 which you solve for m. Coppersmith does exactly that, it finds small roots for a polynomial. \
 Which is why reducing the size of the unknown matters, because smaller the root is, better coppersmith's works on it.
 
+> [!IMPORTANT]
+> Coppersmith's technically finds roots for an function `f(x) = 0     (mod FACTORS OF N)`
+
