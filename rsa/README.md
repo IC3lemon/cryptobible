@@ -103,7 +103,7 @@ and public exponent e is a low number \
 the padding, and the length of the flag also has to be known. 
 
 > [!NOTE]
-> flag format and any information about the message encrypted must be added to the equation to reduce the size of the unkown.
+> `flag format`, `padding` and any information about the message encrypted must be added to the equation to reduce the size of the unkown.
 
 ### `how it works :`
 
