@@ -104,6 +104,12 @@ the padding, and the length of the flag also has to be known.
 
 > [!NOTE]
 > `flag format`, `padding` and any information about the message encrypted must be added to the equation to reduce the size of the unkown.
+> the bounds `X` must be equal to the number of bits of the unkown ur trying to find. (can be greater, but much larger bounds might not yield a solution)
+> ```
+> x < n**(1/e)
+> beta > (1/e)
+> ```
+> both of the above must hold true
 
 ### `how it works :`
 
