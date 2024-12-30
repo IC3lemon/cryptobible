@@ -123,4 +123,4 @@ Which is why reducing the size of the unknown matters, because smaller the root 
 
 > [!IMPORTANT]
 > Coppersmith's technically finds roots for an function `f(x) = 0     (mod FACTORS OF N)`
-
+> holy grail of coppersmith techniques on RSA : https://d-nb.info/972386416/34
