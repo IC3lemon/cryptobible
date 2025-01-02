@@ -20,17 +20,17 @@
 # Attacks Implemented
 
 ## CBC
-- [x] [Padding Oracle attack](https://github.com/IC3lemon/cryptobible/blob/main/aes-scripts/aes-cbc-paddingoracle.py)
+- [x] [Padding Oracle attack](https://github.com/IC3lemon/cryptobible/blob/main/aes/aes-cbc-paddingoracle.py)
 - [ ] [Bit Flipping attack](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 ## ECB
-- [x] [appended secret block attack](https://github.com/IC3lemon/cryptobible/blob/main/aes-scripts/aes-ecb-encryptionoracle.py)
+- [x] [appended secret block attack](https://github.com/IC3lemon/cryptobible/blob/main/aes/aes-ecb-encryptionoracle.py)
 
 ## RSA
-- [x] [common modulus attack](https://github.com/IC3lemon/cryptobible/blob/main/rsa-scripts/rsa-common-modulus-attack.py)
-- [x] [hastad broadcast attack](https://github.com/IC3lemon/cryptobible/blob/main/rsa-scripts/rsa-hastads-broadcast-attack.py)
-- [x] [weiners attack]()
-- [x] [attacks on phi]()
+- [x] [common modulus attack](https://github.com/IC3lemon/cryptobible/blob/main/rsa/rsa-common-modulus-attack.py)
+- [x] [hastad broadcast attack](https://github.com/IC3lemon/cryptobible/blob/main/rsa/rsa-hastads-broadcast-attack.py)
+- [x] [weiners attack](https://github.com/IC3lemon/cryptobible/blob/main/rsa/rsa-weiners-attack.py)
+- [x] [attacks on phi](https://github.com/IC3lemon/cryptobible/blob/main/rsa/rsa-attacks-on-phi.py)
 - [x] [coppersmith's attack for short exponent](https://github.com/IC3lemon/cryptobible/blob/main/rsa/rsa-coppersmiths-attack.py)
 
 ## RNG
