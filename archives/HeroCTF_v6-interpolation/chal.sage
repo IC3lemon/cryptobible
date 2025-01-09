@@ -1,4 +1,3 @@
-```
 #!/usr/bin/sage
 import hashlib
 import re
@@ -30,4 +29,3 @@ for p in points:
         break
 else:
     print("Congrats!")
-```
