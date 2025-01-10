@@ -395,3 +395,5 @@ def Gaussian_Lattice_Reduction(basis):
 *** 
 # SIDE NOTES :
 1. `bytes_to_long(b'crypto{\x00\x00\x00}') + bytes_to_long(b'\x00\x00\x00\x00\x00\x00\x00abc\x00') = bytes_to_long(b'crypto{abc}')`
+2. `a % (a-x) = x`
+3. `-a % x = x - (a % x)` 
