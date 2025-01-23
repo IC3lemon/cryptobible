@@ -1,3 +1,14 @@
+# `Modular Arithematic Basics`
+
+1. if $$a_1 \equiv b_1 \pmod{m}$$ and $$a_2 \equiv b_2 \pmod{m}$$ : 
+   - $${a_1 \pm a_2 \equiv b_1 \pm b_2 \pmod{m}}$$
+   - $${a_1a_2 \equiv b_1b_2 \pmod{m}}$$
+
+2. if $$ac \equiv bc \pmod{m}$$ and `GCD(c, m) == 1` then :
+   - $$\{a \equiv b \pmod{m}}$$
+
+3. if $$m | (b-a)$$ then:
+   - $$a \equiv b \pmod{m}$$
 # `Euler's theorem + why RSA works`
 
 This also covers why `ed = 1 (mod phi(n))` works in RSA \
