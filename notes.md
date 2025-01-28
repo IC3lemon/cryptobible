@@ -9,6 +9,8 @@
 
 3. if $$m | (b-a)$$ then:
    - $$a \equiv b \pmod{m}$$
+  
+4. $$a = x \pmod{a-x}$$
 # `Euler's theorem + why RSA works`
 
 This also covers why `ed = 1 (mod phi(n))` works in RSA \
