@@ -7,10 +7,12 @@
 2. if $$ac \equiv bc \pmod{m}$$ and `GCD(c, m) == 1` then :
    - $$\{a \equiv b \pmod{m}}$$
 
-3. if $$m | (b-a)$$ then:
+3. $$a = x \pmod{a-x}$$
+   
+4. if $$m | (b-a)$$ then:
    - $$a \equiv b \pmod{m}$$
   
-4. $$a = x \pmod{a-x}$$
+
 # `Euler's theorem + why RSA works`
 
 This also covers why `ed = 1 (mod phi(n))` works in RSA \
