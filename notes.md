@@ -32,7 +32,7 @@ for any `m` coprime to `n`
 ```py
 m**(phi(n)) = 1 (mod n)
 ```
-thus, if `ed = 1 (mod phi)` \
+thus, if `ed = 1 (mod phi)` 
 ```
    m**(ed)                 (mod n)
 => m**(1 + k*phi)          (mod n)
