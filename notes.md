@@ -41,6 +41,11 @@ thus, if `ed = 1 (mod phi)` \
 => m                       (mod n)
 ```
 ensures a private key that 100% works.
+> [!note]
+> Since mod p, q falls under the same ring of mod n \
+> You can resort to decrypting using `p` or `q`, and their respective `phi` \
+> to find `m mod p` or `m mod q`. \
+> *( Try doing that by calculating the above equations mod p )*
 
 # `Fermat's Little Theorem`
 
