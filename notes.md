@@ -33,7 +33,7 @@ for any `m` coprime to `n`
 \large{m^{phi(n)} = 1 (mod n)}
 ```
 thus, if `ed = 1 (mod phi)` 
-```math
+```
    m**(ed)                 (mod n)
 => m**(1 + k*phi)          (mod n)
 => m * (m**(k*phi))        (mod n)
