@@ -29,11 +29,11 @@ m**(ed) = m   (mod n)
 ```
 now Euler's theorem states \
 for any `m` coprime to `n` 
-```py
-m**(phi(n)) = 1 (mod n)
+```math
+\large{m^{phi(n)} = 1 (mod n)}
 ```
 thus, if `ed = 1 (mod phi)` 
-```
+```math
    m**(ed)                 (mod n)
 => m**(1 + k*phi)          (mod n)
 => m * (m**(k*phi))        (mod n)
