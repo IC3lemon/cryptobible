@@ -30,7 +30,7 @@ m**(ed) = m   (mod n)
 now Euler's theorem states \
 for any `m` coprime to `n` 
 ```math
-\large{m^{phi(n)} = 1 (mod n)}
+\large{m^{phi(n)} \equiv 1 (mod n)}
 ```
 thus, if `ed = 1 (mod phi)` 
 ```
