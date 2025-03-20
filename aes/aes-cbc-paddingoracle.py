@@ -1,45 +1,33 @@
-from pwn import remote, xor
-from binascii import hexlify, unhexlify
+ct = # ciphertext in bytes
+IV = # iv in bytes
 
-conn = remote('whatever', 696969)
+def oracle(ciphertext):
+    """sends ciphertext to server to decrypt and returns True or False based on valid or invalid padding"""
 
-ct = unhexlify("ciphertext hex")
+def recover_dec_block(iv, block):
+    iv_ = bytearray(iv)
+    dec_block = bytearray(bytes(16))
+    for i in range(15, -1, -1):
+        for x in tqdm(range(257), leave=False, desc=f"Byte {i}/16"):
+            if x == 256:
+                raise Exception('ATTACK FAILED')
+            iv_[i] = x
+            if oracle(bytes(iv_) + bytes(block)):
+                dec_block[i] = x ^ (16 - i)
+                for j in range(i, 16):
+                    iv_[j] = dec_block[j] ^ (16 - i + 1)
+                break
+    return dec_block
+        
 
-assert len(ct) % 16 == 0
+# ct_blocks = [IV] + [ct[i:i+16] for i in range(0, len(ct), 16)]
+# nblocks = len(ct_blocks) - 1
 
-blocks = [ct[i:i+16] for i in range(0, len(ct), 16)]
-pt = b''
+# blocks = []
+# for iv, block in zip(ct_blocks[:-1], ct_blocks[1:]):
+#     dec_bloc = recover_dec_block(iv, block)
+#     blocks.append(xor(dec_bloc, iv))
 
-def oracle(payload):
-    conn.oraclelineafter(b'Please enter the ciphertext: ', payload)
-    response = conn.recvline().strip()
-    if b'No Error' in response:
-        return True
-    else: return False
+#     print(blocks)
 
-def get_key_byte(ind, c0, c1, c2):
-    for guess in range(256):
-        modified_c1 = bytearray(c1)
-        modified_c1[-ind] = guess
-        payload = hexlify(c0 + bytes(modified_c1) + c2)
-        if oracle(payload):
-            print(f"ind: {ind}\t guess: {guess}")
-            return guess
-    return -1
-
-def get_keystream(c0, c1, c2):
-    keystream = bytearray(16)
-    keystream[-1] = get_key_byte(1, c0, c1, c2) ^ 0x01 ^ c2[-1]
-    for ind in range(2, 17):  
-        c1 = bytearray(c1)
-        for i in range(1, ind):
-            c1[-i] = keystream[-i] ^ ind ^ c2[-i]
-        c1 = bytes(c1)
-        keystream[-ind] = get_key_byte(ind, c0, c1, c2) ^ ind ^ c2[-ind]
-        print(f"ind: {ind}\t keystream: {bytes(keystream)}")
-    return keystream
-
-for i in range (0, len(blocks)-2):
-    keystream = get_keystream(blocks[i], blocks[i+1], blocks[i+2])
-    pt = pt + xor(keystream, blocks[i+1], blocks[i+2])
-    print(pt)
+# print(b''.join(x for x in blocks))
