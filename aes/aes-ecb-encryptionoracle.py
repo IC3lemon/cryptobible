@@ -10,33 +10,39 @@ ENCRYPT( USER INPUT + SECRET )
 refer to this for more detail on the attack -> https://0awawa0.medium.com/break-me-downunder-ctf-2021-writeup-d2f4db2144b6
 or refer to README.md under aes [TODO]
 """
-from pwn import *
 from Crypto.Util.number import *
+from tqdm import tqdm
+import requests
+import string
 
-r = remote('host', port)
+def encrypt(plaintext):
+    """oracle function that takes plaintext bytes returns ciphertext bytes"""
+    ciphertext = 'received from server' # edit accordingly
+    return bytes.fromhex(ciphertext)
 
-found = bytearray(b'')
+nblocks = len(encrypt(b"\x00"*16)[16:]) // 16
+charset = string.printable
 
-for x in range(16, -1, -1):
-    payload = b'a'*x
-    hex_payload = hex(bytes_to_long(payload))[2:]
+flag = "" 
+for i in range(nblocks):
+    flag_block = ""
+    target = encrypt(b"\x00"*16)[16*(i+1):16*(i+2)]
+    for x in tqdm(range(15, -1, -1), leave=False):
+        if i == 0:
+            payload = b"\x00"*x
+        else:
+            payload = b"\x00"*(16 - len(flag_block)//2 - 1)
 
-    r.recvuntil(b'Enter plaintext (in hex): ')
-    r.sendline(hex_payload.encode())
-    recieved = r.recvline().decode().strip()
-    yes = recieved[:16]
-    for i in range(256):
-        
-        bhai = b'a'*x  + found + chr(i).encode()
-        pls = hex(bytes_to_long(bhai))[2:]
-        r.recvuntil(b'Enter plaintext (in hex): ')
-        r.sendline(pls.encode())
-        recieved = r.recvline().decode().strip()[:16]
-        if(yes == recieved):
-            print('secret found : ', chr(i))
-            found.append(i)
+        if x == 0:
+            recieved = target
+        else:
+            recieved = encrypt(payload)[16*i:16*(i+1)]
+        for c in charset:
+            if recieved == encrypt(payload+flag.encode()+c.encode())[16*i:16*(i+1)]:
+                flag_block += c
+                flag += c
+                break
+        if c == '}':
             break
-    print(f'[*] (iteration {x}/16) constructed : {found}')
-    x -= 1
-
-print(f"\n\nFLAG / SECRET : {found})
+    print(f"block {i+1} : {flag_block}")
+print(f"\n{flag}")
