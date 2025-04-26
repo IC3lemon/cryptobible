@@ -1,3 +1,5 @@
+from sage.all import *
+
 def lwe(A, b, p):
     """
     A * s + e = b (mod p)
