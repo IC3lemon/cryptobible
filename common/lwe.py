@@ -15,3 +15,15 @@ def lwe(A, b, p):
     L = M.LLL()
     for i in L:
         print(f"{i}\n")
+
+def test():
+    p = 1361
+    m, n = 60, 30
+    A = random_matrix(GF(p), m, n)
+    s = random_vector(GF(p), n)
+    e = vector([randint(-1, 1) for i in range(m)])
+    b = A*s + e
+    print(f"{e = }")
+    
+    
+    lwe(A, b, p) # should have e
