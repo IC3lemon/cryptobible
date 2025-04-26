@@ -6,3 +6,4 @@ Stuff logged here :
 - `Coppersmith for univariate polynomials`
 - `Coppersmith for multivariate polynomials`
 - `Gaussian lattice reduction`
+- `Merkle Hellman Problem - Basic soln`
