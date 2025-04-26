@@ -14,7 +14,9 @@ def lwe(A, b, p):
     M = M.stack(diagonal_matrix(ZZ, [p] * A.nrows(), sparse=False)) 
     L = M.LLL()
     for i in L:
-        print(f"{i}\n")
+        if i != 0:
+            break
+    return i
 
 def test():
     p = 1361
