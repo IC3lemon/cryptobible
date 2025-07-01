@@ -1,7 +1,4 @@
-from Crypto.Util.number import *
-from sympy import *
-from functools import reduce
-import gmpy2
+from math import *
 # from sage.all import *
 
 def cont_fracs(x,y):
@@ -25,7 +22,7 @@ def convergents(frac):
     for i in range(len(frac)): convs.append(contfrac_to_rational(frac[0 : i]))
     return convs
   
-def weiner_attack(n : int, e : int) -> int:
+def weiners_attack(n : int, e : int) -> int:
     """
     Attack recovers private exponent d, and revolves around the fact that ed = 1 (mod phi)
     for huge e, if 1/e < 1/3 * fourth root of N.  d can be efficiently recovered.
@@ -56,7 +53,4 @@ def weiner_attack(n : int, e : int) -> int:
                 if sq * sq == D and (s + sq) % 2 == 0: 
                     return d
 
-if __name__ == "__main__" :
-    n = # modulus
-    e = # huge public exponent
-    d = weiner_attack(n, e) # private exponent retrieved
+
