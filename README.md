@@ -22,21 +22,22 @@
 
 - ## AES
   - ### CBC
-    - [x] [Padding Oracle](src/cryptobible/aes/aes-cbc-paddingoracle.py)
-    - [ ] Bit Flipping ([reference](https://www.youtube.com/watch?v=dQw4w9WgXcQ))
+    - [ ] [Padding Oracle](src/cryptobible/aes/cbc/padding_oracle.py)
+    - [ ] [Bit Flipping](src/cryptobible/aes/cbc/padding_oracle_bit_flip.py) ([reference](https://www.youtube.com/watch?v=dQw4w9WgXcQ))
     - [ ] IV Recovery
     - [ ] CBC-MAC: Length Extension
     - [ ] CBC-MAC: Key-reuse
     - [ ] Side-Channel: Cache-Timing
 
   - ### ECB
+    - [ ] [Encryption Oracle](src/cryptobible/aes/ecb/encryption_oracle.py)
     - [ ] [Append Secret Block](src/cryptobible/aes/aes-ecb-encryptionoracle.py) (encryption oracle)
 
 - ## RSA
-  - [x] [Common-modulus](src/cryptobible/rsa/rsa-common-modulus-attack.py) - same $m, n$, different $e, d$
-  - [x] [Hastad's broadcast](src/cryptobible/rsa/rsa-hastads-broadcast-attack.py) - same message, small $e$
-  - [ ] [Coppersmith's small $e$](src/cryptobible/rsa/rsa-coppersmiths-attack-low-exponent.py)
-  - [x] [Weiner's](src/cryptobible/rsa/rsa-weiners-attack.py) - small $d$
+  - [x] [Common-modulus](src/cryptobible/rsa/common_modulus.py) - same $m, n$, different $e, d$
+  - [x] [Hastad's broadcast](src/cryptobible/rsa/hastads_broadcast.py) - same message, small $e$
+  - [ ] [Coppersmith's small $e$](src/cryptobible/rsa/coppersmiths_small_e.py)
+  - [x] [Weiner's](src/cryptobible/rsa/weiners.py) - small $d$
   - [ ] Extended Weiner's
   - [ ] Boneh-Durfee - upgrade to Weiner's
   - [ ] Cherkaoui-Semmouni - primes sharing most of MSBs
@@ -66,7 +67,7 @@
     - [ ] Electromagnetic (EM)
   - ### Non-attacks
     - [ ] Known private exponent - $p$ and $q$ from $d$
-    - [x] [Attacks on phi](src/cryptobible/rsa/rsa-attacks-on-phi.py) - $φ(N)$ from primes
+    - [x] [Attacks on phi](src/cryptobible/rsa/non-attacks/rsa-attacks-on-phi.py) - $φ(N)$ from primes
 
 - ## ECC
 <!-- https://github.com/elikaski/ECC_Attacks -->
@@ -87,7 +88,7 @@
 - ## Prime Factoring
   - [ ] Shared Primes - Multiple moduli with same prime factors
   - [ ] Fermat factorisation
-  - [ ] Pollard's `p-1`
+  - [x] [Pollard's `p-1`](src/cryptobible/factoring/pollards_pm1.py)
   - [ ] William's `p+1`
   - [ ] Elliptic Curve Method
   - [ ] Cyclotomic Polynomials
@@ -101,7 +102,7 @@
   - [ ] Twin Primes
     - ### Partial known
       - [ ] Branch-and-Prune
-      - [ ] Coppersmith's method
+      - [ ] [Coppersmith's method](src/cryptobible/factoring/partial_known/coppersmith.py)
       - [ ] Unbalanced modulus
 
 - ## RNG
@@ -112,9 +113,11 @@
     - [ ] Partial State to Seed ([reference](https://www.youtube.com/watch?v=dQw4w9WgXcQ))
 
 - ## Lattices (Post-Quantum)
+  - [x] [Gaussian Lattice Reduction](src/cryptobible/lattices/gaussian_lattice_reduction.py)
+  - [x] [Merkle-Hellman](src/cryptobible/lattices/merkle_hellman.py) (knapsack cryptography)
   - ### LWE
     - [ ] No Noise (only message)
-    - [x] Low Noise (LLL/BKZ cracking)
+    - [x] [Low Noise](src/cryptobible/lattices/lwe/low_noise.py) (LLL/BKZ cracking)
     - [ ] Fixed Noise (Aurora-Ge)
 <!-- Note: Below algorithms are very complex -->
   - ### MLDSA
