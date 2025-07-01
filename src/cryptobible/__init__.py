@@ -1,1 +1,2 @@
-from common import *
+from .common import *
+from .lattices.lwe import *

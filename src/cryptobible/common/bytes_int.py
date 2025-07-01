@@ -1,4 +1,3 @@
-
 def bytes_to_long(b: bytes):
     return int.from_bytes(b)
 
