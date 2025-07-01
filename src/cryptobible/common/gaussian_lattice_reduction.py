@@ -1,4 +1,14 @@
-def Gaussian_Lattice_Reduction(basis):
+from sage.all import *
+
+def gausian_lattice_reduction(basis):
+    """
+    reduces a bad basis to retrieve good basis, algo off of cryptohack
+    Args:
+        basis : 2 x 2 Matrix containing rowwise basis vectors
+
+    Returns:
+        basis : 2 x 2 Matrix with reduced basis vectors
+    """
     v1 = basis[0]
     v2 = basis[1]
     if basis[1] > basis[0]:

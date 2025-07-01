@@ -21,7 +21,7 @@
 
 ## CBC
 - [x] [Padding Oracle attack](https://github.com/IC3lemon/cryptobible/blob/main/aes/aes-cbc-paddingoracle.py)
-- [ ] [Bit Flipping attack](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+- [x] [Bit Flipping attack](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 ## ECB
 - [x] [appended secret block attack](https://github.com/IC3lemon/cryptobible/blob/main/aes/aes-ecb-encryptionoracle.py)

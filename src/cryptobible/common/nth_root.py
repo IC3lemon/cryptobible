@@ -1,16 +1,4 @@
-from Crypto.Util.number import *
-from gmpy2 import iroot
+from sage.all import *
 
-def nth_root(a, n, p):
-  """Computes nth root of a mod p"""
-        g = GCD(n, p-1)
-        e_prime = n // g
-        t = (p - 1) // g
-        d_prime = inverse(e_prime, t)
-        X = pow(a, d_prime, p)
-        root, exact = iroot(X, g)
-        if exact:
-            return root
-        else:
-            print("NO ROOTS")
-            return None
+def nth_root(a, n, p): 
+    return GF(p)(a).nth_root(n)
