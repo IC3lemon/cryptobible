@@ -1,1 +1,1 @@
-from low_noise import *
+from low_noise import lwe
