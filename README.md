@@ -127,4 +127,4 @@
     - [ ] Low-Density Parity-Check - side-channel
     - [ ] Roulette: fault-injection
     - [ ] Error-Tolerant Key Recovery: belief-propagation, lattice-reduction
-  
+ 

@@ -6,6 +6,13 @@ def lwe(A, b, p):
     given matrix A (m x n) of n eqns with m unknowns, b = [b_i ... ]
     returns list [e_i ... ]
     for small errors e
+    Args:
+        A : m x n matrix of n eqns with m unkowns
+        b : n degree vector
+        p : modulus
+
+    Returns:
+        e : n degree error vector
     """
     A = A.change_ring(ZZ)
     b = b.change_ring(ZZ)
@@ -25,7 +32,9 @@ def test():
     s = random_vector(GF(p), n)
     e = vector([randint(-1, 1) for i in range(m)])
     b = A*s + e
-    print(f"{e = }")
+    # print(f"{e = }")
     
-    
-    lwe(A, b, p) # should have e
+    assert e or -e in lwe(A, b, p) # should have e
+
+if __name__ == "__main__":
+    test()
