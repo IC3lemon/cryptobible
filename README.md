@@ -12,8 +12,8 @@
 
 ***
 
-- refer to <a href="https://github.com/IC3lemon/cryptobible/blob/main/bread-and-butter.md">`bread-and-butter.md`</a> for absolute basic stuff
-- refer to <a href="https://github.com/IC3lemon/cryptobible/blob/main/notes.md">`notes.md`</a> for modular arithematic theorems and other core math stuff
+- refer to [`bread-and-butter.md`](notes/bread-and-butter.md) for absolute basic stuff
+- refer to [`notes.md`](notes/notes.md) for modular arithematic theorems and other core math stuff
 
 ***
 
