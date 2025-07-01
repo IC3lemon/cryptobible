@@ -17,25 +17,26 @@
 
 ***
 
+
 # Attacks Implemented
 
 - ## AES
   - ### CBC
-    - [x] [Padding Oracle](https://github.com/IC3lemon/cryptobible/blob/main/aes/aes-cbc-paddingoracle.py)
-    - [ ] [Bit Flipping](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+    - [x] [Padding Oracle](src/cryptobible/aes/aes-cbc-paddingoracle.py)
+    - [ ] Bit Flipping ([reference](https://www.youtube.com/watch?v=dQw4w9WgXcQ))
     - [ ] IV Recovery
     - [ ] CBC-MAC: Length Extension
     - [ ] CBC-MAC: Key-reuse
     - [ ] Side-Channel: Cache-Timing
 
   - ### ECB
-    - [x] [appended secret block attack](https://github.com/IC3lemon/cryptobible/blob/main/aes/aes-ecb-encryptionoracle.py)
+    - [ ] [Append Secret Block](src/cryptobible/aes/aes-ecb-encryptionoracle.py) (encryption oracle)
 
 - ## RSA
-  - [x] Common-modulus - same $m, n$, different $e, d$
-  - [x] Hastad's broadcast - same message, small $e$
-  - [x] Coppersmith's - small $e$
-  - [x] Weiner's - small $d$
+  - [x] [Common-modulus](src/cryptobible/rsa/rsa-common-modulus-attack.py) - same $m, n$, different $e, d$
+  - [x] [Hastad's broadcast](src/cryptobible/rsa/rsa-hastads-broadcast-attack.py) - same message, small $e$
+  - [ ] [Coppersmith's small $e$](src/cryptobible/rsa/rsa-coppersmiths-attack-low-exponent.py)
+  - [x] [Weiner's](src/cryptobible/rsa/rsa-weiners-attack.py) - small $d$
   - [ ] Extended Weiner's
   - [ ] Boneh-Durfee - upgrade to Weiner's
   - [ ] Cherkaoui-Semmouni - primes sharing most of MSBs
@@ -65,7 +66,23 @@
     - [ ] Electromagnetic (EM)
   - ### Non-attacks
     - [ ] Known private exponent - $p$ and $q$ from $d$
-    - [x] Attacks on phi - $φ(N)$ from primes
+    - [x] [Attacks on phi](src/cryptobible/rsa/rsa-attacks-on-phi.py) - $φ(N)$ from primes
+
+- ## ECC
+<!-- https://github.com/elikaski/ECC_Attacks -->
+  - ### ECDH
+    - [ ] Small Order
+    - [ ] Smooth Order
+    - [ ] Almost Smooth Order, Small Private Key
+    - [ ] Non-Verfication - point not on curve
+    - [ ] Singular Curve
+    - [ ] Supersingular Curve
+    - [ ] Anomalous Curve
+  - ## ECDSA
+    - [ ] No Message Hashing
+    - [ ] Reused $k$
+    - [ ] Insecure $k$ generation
+    - [ ] Invalid generator
 
 - ## Prime Factoring
   - [ ] Shared Primes - Multiple moduli with same prime factors
@@ -87,9 +104,27 @@
       - [ ] Coppersmith's method
       - [ ] Unbalanced modulus
 
-## RNG
-- ### Merseinne Twister
-    - [ ] [predicting outputs with full state](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-    - [ ] [predicting outputs with partial state](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-    - [ ] [full state to seed](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-    - [ ] [partial state to seed](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+- ## RNG
+  - ### Merseinne Twister
+    - [ ] Predict Outputs with Full State ([reference](https://www.youtube.com/watch?v=dQw4w9WgXcQ))
+    - [ ] Predict Outputs with Partial State ([reference](https://www.youtube.com/watch?v=dQw4w9WgXcQ))
+    - [ ] Full State to Seed ([reference](https://www.youtube.com/watch?v=dQw4w9WgXcQ))
+    - [ ] Partial State to Seed ([reference](https://www.youtube.com/watch?v=dQw4w9WgXcQ))
+
+- ## Lattices (Post-Quantum)
+  - ### LWE
+    - [ ] No Noise (only message)
+    - [x] Low Noise (LLL/BKZ cracking)
+    - [ ] Fixed Noise (Aurora-Ge)
+<!-- Note: Below algorithms are very complex -->
+  - ### MLDSA
+    - [ ] Fault injection
+  - ### MLDSA: Dilithium
+    - [ ] Fault injection
+    - [ ] Side-Channel: Power (ML/DL)
+  - ### MLDSA: Kyber
+    - [ ] Side-Channel: Power
+    - [ ] Low-Density Parity-Check - side-channel
+    - [ ] Roulette: fault-injection
+    - [ ] Error-Tolerant Key Recovery: belief-propagation, lattice-reduction
+  
