@@ -1,2 +1,2 @@
-from common import *
-from lwe import *
+from .common import *
+from .lwe import *
