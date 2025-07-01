@@ -22,14 +22,15 @@
 
 - ## AES
   - ### CBC
-    - [x] [Padding Oracle](src/cryptobible/aes/cbc/padding_oracle.py)
-    - [ ] Bit Flipping ([reference](https://www.youtube.com/watch?v=dQw4w9WgXcQ))
+    - [ ] [Padding Oracle](src/cryptobible/aes/cbc/padding_oracle.py)
+    - [ ] [Bit Flipping](src/cryptobible/aes/cbc/padding_oracle_bit_flip.py) ([reference](https://www.youtube.com/watch?v=dQw4w9WgXcQ))
     - [ ] IV Recovery
     - [ ] CBC-MAC: Length Extension
     - [ ] CBC-MAC: Key-reuse
     - [ ] Side-Channel: Cache-Timing
 
   - ### ECB
+    - [ ] [Encryption Oracle](src/cryptobible/aes/ecb/encryption_oracle.py)
     - [ ] [Append Secret Block](src/cryptobible/aes/aes-ecb-encryptionoracle.py) (encryption oracle)
 
 - ## RSA
@@ -87,7 +88,7 @@
 - ## Prime Factoring
   - [ ] Shared Primes - Multiple moduli with same prime factors
   - [ ] Fermat factorisation
-  - [ ] Pollard's `p-1`
+  - [x] [Pollard's `p-1`](src/cryptobible/factoring/pollards_pm1.py)
   - [ ] William's `p+1`
   - [ ] Elliptic Curve Method
   - [ ] Cyclotomic Polynomials
@@ -112,9 +113,11 @@
     - [ ] Partial State to Seed ([reference](https://www.youtube.com/watch?v=dQw4w9WgXcQ))
 
 - ## Lattices (Post-Quantum)
+  - [x] [Gaussian Lattice Reduction](src/cryptobible/lattices/gaussian_lattice_reduction.py)
+  - [x] [Merkle-Hellman](src/cryptobible/lattices/merkle_hellman.py) (knapsack cryptography)
   - ### LWE
     - [ ] No Noise (only message)
-    - [x] Low Noise (LLL/BKZ cracking)
+    - [x] [Low Noise](src/cryptobible/lattices/lwe/low_noise.py) (LLL/BKZ cracking)
     - [ ] Fixed Noise (Aurora-Ge)
 <!-- Note: Below algorithms are very complex -->
   - ### MLDSA
