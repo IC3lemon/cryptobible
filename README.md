@@ -19,12 +19,17 @@
 
 # Attacks Implemented
 
-## CBC
-- [x] [Padding Oracle attack](https://github.com/IC3lemon/cryptobible/blob/main/aes/aes-cbc-paddingoracle.py)
-- [ ] [Bit Flipping attack](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+- ## AES
+  - ### CBC
+    - [x] [Padding Oracle](https://github.com/IC3lemon/cryptobible/blob/main/aes/aes-cbc-paddingoracle.py)
+    - [ ] [Bit Flipping](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+    - [ ] IV Recovery
+    - [ ] CBC-MAC: Length Extension
+    - [ ] CBC-MAC: Key-reuse
+    - [ ] Side-Channel: Cache-Timing
 
-## ECB
-- [x] [appended secret block attack](https://github.com/IC3lemon/cryptobible/blob/main/aes/aes-ecb-encryptionoracle.py)
+  - ### ECB
+    - [x] [appended secret block attack](https://github.com/IC3lemon/cryptobible/blob/main/aes/aes-ecb-encryptionoracle.py)
 
 - ## RSA
   - [x] Common-modulus - same $m, n$, different $e, d$
