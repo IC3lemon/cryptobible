@@ -22,7 +22,7 @@
 
 - ## AES
   - ### CBC
-    - [ ] [Padding Oracle](src/cryptobible/aes/cbc/padding_oracle.py)
+    - [x] [Padding Oracle](src/cryptobible/aes/cbc/padding_oracle.py)
     - [ ] [Bit Flipping](src/cryptobible/aes/cbc/padding_oracle_bit_flip.py) ([reference](https://www.youtube.com/watch?v=dQw4w9WgXcQ))
     - [ ] IV Recovery
     - [ ] CBC-MAC: Length Extension
