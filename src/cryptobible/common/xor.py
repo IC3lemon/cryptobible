@@ -3,7 +3,7 @@ from .bytes_int import long_to_bytes
 def xor(*args, cut=max):
     '''
     Inspired by pwn.xor() function, implements a simpler version.
-    XORs any number of given bytestrings.
+    XORs any number of given bytestrings. Ignores empty strings.
     Args:
         *args   : any nymber of bytes, bytearray or list objects
         cut     : function which decides the result's length cutoff
@@ -16,7 +16,7 @@ def xor(*args, cut=max):
 
     strs = [
         long_to_bytes(s) if isinstance(s, int) else bytearray(s)
-        for s in args
+        for s in args if s
     ]
     cutoff = cut(len(s) for s in strs)
 
