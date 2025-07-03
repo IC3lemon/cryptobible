@@ -1,4 +1,4 @@
-from pwn import xor
+from .bytes_int import long_to_bytes
 
 def xor(*args, cut=max):
     '''
@@ -14,7 +14,10 @@ def xor(*args, cut=max):
     if len(args) == 0:
         raise ValueError("Must have something to xor")
 
-    strs = [bytearray(s) for s in args]
+    strs = [
+        long_to_bytes(s) if isinstance(s, int) else bytearray(s)
+        for s in args
+    ]
     cutoff = cut(len(s) for s in strs)
 
     def xor_char(n):
