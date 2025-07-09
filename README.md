@@ -87,7 +87,7 @@
 
 - ## Prime Factoring
   - [ ] Shared Primes - Multiple moduli with same prime factors
-  - [ ] Fermat factorisation
+  - [x] [Fermat factorisation](src/cryptobible/factoring/fermat_factorisation.py)
   - [x] [Pollard's `p-1`](src/cryptobible/factoring/pollards_pm1.py)
   - [ ] William's `p+1`
   - [ ] Elliptic Curve Method
