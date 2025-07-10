@@ -87,7 +87,7 @@
 
 - ## Prime Factoring
   - [ ] Shared Primes - Multiple moduli with same prime factors
-  - [ ] Fermat factorisation
+  - [x] [Fermat factorisation](src/cryptobible/factoring/fermat_factorisation.py)
   - [x] [Pollard's `p-1`](src/cryptobible/factoring/pollards_pm1.py)
   - [ ] William's `p+1`
   - [ ] Elliptic Curve Method
@@ -116,7 +116,7 @@
   - [x] [Gaussian Lattice Reduction](src/cryptobible/lattices/gaussian_lattice_reduction.py)
   - [x] [Merkle-Hellman](src/cryptobible/lattices/merkle_hellman.py) (knapsack cryptography)
   - ### LWE
-    - [ ] No Noise (only message)
+    - [x] [No Noise](src/cryptobible/lattices/lwe/no_noise.py) (only message)
     - [x] [Low Noise](src/cryptobible/lattices/lwe/low_noise.py) (LLL/BKZ cracking)
     - [ ] Fixed Noise (Aurora-Ge)
 <!-- Note: Below algorithms are very complex -->

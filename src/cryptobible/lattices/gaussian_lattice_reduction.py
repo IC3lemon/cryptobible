@@ -22,4 +22,17 @@ def gausian_lattice_reduction(basis):
             break
         v1 -= p*v2 # reduce the taller vector
     
-    return [v1, v2]
+    return [v2, v1]
+
+def test():
+    while True:
+        A = random_matrix(ZZ, 2, 2)
+        if A.determinant() != 0:
+            break
+    # print(A)
+    G = gausian_lattice_reduction(A)
+    L = A.LLL()
+    assert matrix(G) == L
+
+if __name__ == "__main__":
+    test()
